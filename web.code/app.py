@@ -29,15 +29,14 @@ rl.init_rec()
 
 
 # 这里对数据库内容进行提取
-spider_business.run()
-spider_entertainment.run()
-spider_game.run()
-spider_military.run()
-spider_politics.run()
-spider_society.run()
-spider_sports.run()
-spider_technology.run()
-
+# spider_business.run()
+# spider_entertainment.run()
+# spider_game.run()
+# spider_military.run()
+# spider_politics.run()
+# spider_society.run()
+# spider_sports.run()
+# spider_technology.run()
 
 datalist = useful_functions.get_rec_datalist()
 
