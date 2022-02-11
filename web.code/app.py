@@ -6,13 +6,14 @@ from model.forms import SearchForm
 from flask import request
 import useful_functions
 import spider_politics
-import spider_business
+import spider_business     
 import spider_entertainment
-import spider_game 
-import spider_military 
-import spider_society
-import spider_sports
-import spider_technology
+import spider_game         
+import spider_military     
+import spider_society      
+import spider_sports       
+import spider_technology   
+
 
 import json
 import rl
@@ -36,14 +37,14 @@ rl.init_rec()
 
 
 # 这里对数据库内容进行提取
-# spider_business.run()
-# spider_entertainment.run()
-# spider_game.run()
-# spider_military.run()
-# spider_politics.run()
-# spider_society.run()
-# spider_sports.run()
-# spider_technology.run()
+spider_business.run()
+spider_entertainment.run()
+spider_game.run()
+spider_military.run()
+spider_politics.run()
+spider_society.run()
+spider_sports.run()
+spider_technology.run()
 
 datalist = useful_functions.get_rec_datalist()
 
@@ -107,7 +108,7 @@ def team_page():
 # 数据库文本信息分析，topK8的词语及频率，暂时用的是直方图
 @app.route('/analysis')
 def analysis_page():
-    return render_template("analysis.html",words = words,weights = weights)
+    return render_template("analysis.html", words=words, weights=weights)
 
 
 # 搜索界面
@@ -122,8 +123,9 @@ def search_page():
 def newsResult_page():
     form = SearchForm()
     search = request.args.get("query")
+    print(search)
     search_list = []
-    cnn_search = pymysql.connect(host='10.10.3.193', user='root', password='shujuku', port=3306, database='news_with_keyword',
+    cnn_search = pymysql.connect(host='127.0.0.1', user='rec', password='shujuku', port=3306, database='news_with_keyword',
                                  charset='utf8')
     cursor_search = cnn_search.cursor()
     sql_search = "select * from guanchazhe where content like '{}'".format('%'+search+'%')

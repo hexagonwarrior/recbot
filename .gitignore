@@ -1,0 +1,6 @@
+*.pyc
+web.code/__pycache__/*.pyc
+recbot
+rl.code/argparse
+rl.code/torch
+rl.code/trained_models/recbot

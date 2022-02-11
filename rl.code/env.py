@@ -24,7 +24,7 @@ class rec_env:
         self.state[0:HISTORY_LEN] = [0 for i in range(HISTORY_LEN)] 
         self.state[HISTORY_LEN:STATE_LEN] = [0 for i in range(SEQ_LEN)]
         # self.bot = [random.random() for i in range(CLASS_LEN)] # 生成8个随机数做为用户点击概率
-        self.bot = [0.1, 0.1, 0.1, 0.1, 0.1, 0.9, 0.8, 0.5]
+        self.bot = [0.1, 0.1, 0.9, 0.1, 0.1, 0.4, 0.6, 0.5]
         return self.state
 
     # 根据点击历史来计算分布
