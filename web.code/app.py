@@ -6,6 +6,13 @@ from model.forms import SearchForm
 from flask import request
 import useful_functions
 import spider_politics
+import spider_business
+import spider_entertainment
+import spider_game 
+import spider_military 
+import spider_society
+import spider_sports
+import spider_technology
 
 import json
 import rl
